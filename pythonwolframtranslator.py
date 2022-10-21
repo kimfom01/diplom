@@ -1,5 +1,4 @@
 from wolframclient.evaluation import WolframLanguageSession
-from sympy.parsing.mathematica import parse_mathematica
 session = WolframLanguageSession()
 
 class PyWolfTranslator:
