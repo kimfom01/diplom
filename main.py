@@ -10,6 +10,7 @@ from pythonwolframtranslator import PyWolfTranslator
 
 # eq = 'x^2 + 2 x + 1'
 # symbol = f'Factor[{eq}]'
+# params = ''
 
 # eq = 'x^2 + 3 x - 4 == 0'
 # symbol = 'Roots'
@@ -33,9 +34,11 @@ params = 'x'
 
 # eq = 'Sin[x + I y]'
 # symbol = f'ComplexExpand[{eq}]'
+# params = ''
 
 # eq = 'E^(I x)'
 # symbol = f'ExpToTrig[{eq}]'
+# params = ''
 
 mytest = PyWolfTranslator(eq, symbol, params)
 result = mytest.evaluate_equation()
