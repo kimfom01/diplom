@@ -40,8 +40,9 @@ var = 'x'
 # symbol = f'ExpToTrig[{eq}]'
 # var = ''
 
-mytest = PyWolfTranslator(eq, symbol, var)
-result = mytest.evaluate_equation()
+mytest = PyWolfTranslator('CkD8JODcVcYDXXx/xU0IHzBBdrRZmaqvW6iRiedcrgk=',
+                          '8RaVLaIsJAO3F8D0IakGi1UrDay0Uf2GLFK85LJaNtk=')
+result = mytest.evaluate_equation(eq, symbol, var)
 
 print(result)
 # print(mytest.__doc__)
