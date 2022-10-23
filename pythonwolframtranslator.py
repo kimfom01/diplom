@@ -80,9 +80,8 @@ class PyWolfTranslator:
 
         self.session.start()
         if not self.session.authorized():
-            raise ValueError(
-                "Not Authorized! Please verify your secure authentication key!")
-        eq = f"{self._equation}"
+            raise ValueError('Not Authorized! Please verify your secure authentication key!')
+        eq = f'{self._equation}'
         if self._var == None:
             sym_form = f'{self._symbol}[{eq}]'
         else:

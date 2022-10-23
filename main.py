@@ -9,36 +9,33 @@ from pythonwolframtranslator import PyWolfTranslator
 # var = 'x'
 
 # eq = 'x^2 + 2 x + 1'
-# symbol = f'Factor[{eq}]'
-# var = ''
-
-# eq = 'x^2 + 3 x - 4 == 0'
-# symbol = 'Roots'
-# var = 'x'
+# symbol = 'Factor'
 
 # eq = '(x^3 - 1)/(x - 1)'
 # symbol = 'Limit'
 # var = 'x -> 1'
 
 # eq = 'x^6'
-# symbol = f'D[{eq}, x]'
+# symbol = 'D'
 # var = 'x'
 
 # eq = '8 x^4'
-# symbol = f'Integrate[{eq}, x]'
+# symbol = 'Integrate'
 # var = 'x'
 
-eq = 'y\'[x] + y[x] == x'
-symbol = f'DSolveValue[{eq}, y[x], x]'
-var = 'x'
+# eq = 'y\'[x] + y[x] == x'
+# symbol = 'DSolveValue'
+# var = 'x'
 
 # eq = 'Sin[x + I y]'
-# symbol = f'ComplexExpand[{eq}]'
-# var = ''
+# symbol = 'ComplexExpand'
 
 # eq = 'E^(I x)'
-# symbol = f'ExpToTrig[{eq}]'
-# var = ''
+# symbol = 'ExpToTrig'
+
+eq = 'x^2 + 3 x - 4 == 0'
+symbol = 'Roots'
+var = 'x'
 
 mytest = PyWolfTranslator('CkD8JODcVcYDXXx/xU0IHzBBdrRZmaqvW6iRiedcrgk=',
                           '8RaVLaIsJAO3F8D0IakGi1UrDay0Uf2GLFK85LJaNtk=')
