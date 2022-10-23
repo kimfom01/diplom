@@ -2,45 +2,46 @@ from pythonwolframtranslator import PyWolfTranslator
 
 # eq = 'Derivative[2][x][t] - (3 t) + Derivative[1][x][t] == 0'
 # symbol = 'DSolveValue'
-# params = 'x[t], t'
+# var = 'x[t], t'
 
 # eq = 'x^2 + 2 x - 15 == 0'
 # symbol = 'Roots'
-# params = 'x'
+# var = 'x'
 
 # eq = 'x^2 + 2 x + 1'
 # symbol = f'Factor[{eq}]'
-# params = ''
+# var = ''
 
 # eq = 'x^2 + 3 x - 4 == 0'
 # symbol = 'Roots'
-# params = 'x'
+# var = 'x'
 
 # eq = '(x^3 - 1)/(x - 1)'
 # symbol = 'Limit'
-# params = 'x -> 1'
+# var = 'x -> 1'
 
 # eq = 'x^6'
 # symbol = f'D[{eq}, x]'
-# params = 'x'
+# var = 'x'
 
 # eq = '8 x^4'
 # symbol = f'Integrate[{eq}, x]'
-# params = 'x'
+# var = 'x'
 
 eq = 'y\'[x] + y[x] == x'
 symbol = f'DSolveValue[{eq}, y[x], x]'
-params = 'x'
+var = 'x'
 
 # eq = 'Sin[x + I y]'
 # symbol = f'ComplexExpand[{eq}]'
-# params = ''
+# var = ''
 
 # eq = 'E^(I x)'
 # symbol = f'ExpToTrig[{eq}]'
-# params = ''
+# var = ''
 
-mytest = PyWolfTranslator(eq, symbol, params)
+mytest = PyWolfTranslator(eq, symbol, var)
 result = mytest.evaluate_equation()
 
 print(result)
+# print(mytest.__doc__)
