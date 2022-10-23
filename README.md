@@ -6,9 +6,17 @@ Topic: Разработка трансляции кода из Python в Wolfram
 pythonwolframtranslator is a python library that can be used to carry out certain mathematical calculations. It is built upon the Wolfram Mathematica Cloud Engine. Connection to the cloud is made possible through the open source library [wolframclient](https://pypi.org/project/wolframclient/).
 
 ### How to try it out
-Install the library
-``` sh
-$ pip install wolframclient
+Download the repo and add it to your project  
+![repo-download2](https://user-images.githubusercontent.com/57032138/197413405-8820f26e-8759-4a28-9578-664184bbec02.png)
+
+or Clone the repo using the following commands
+``` shell
+git clone https://github.com/kimfom01/coursework.git
+```
+
+Install the wolframclient library
+``` shell
+pip install wolframclient
 ```
 [Generate a Secured Authentication Key](https://reference.wolfram.com/language/WolframClientForPython/docpages/basic_usages.html#wolfram-cloud-interactions:~:text=Generate%20a%20Secured%20Authentication%20Key) or you can use mine for demo purposes. The Secure Authentication Key consists of a consumer key and a consumer secret key. They will be used to connect to the cloud API.
 
