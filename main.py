@@ -1,4 +1,5 @@
 from pythonwolframtranslator import PyWolfTranslator
+from auth import consumer_key, consumer_secret
 
 # eq = 'Derivative[2][x][t] - (3 t) + Derivative[1][x][t] == 0'
 # symbol = 'DSolveValue'
@@ -37,8 +38,7 @@ eq = 'x^2 + 3 x - 4 == 0'
 symbol = 'Roots'
 var = 'x'
 
-mytest = PyWolfTranslator('CkD8JODcVcYDXXx/xU0IHzBBdrRZmaqvW6iRiedcrgk=',
-                          '8RaVLaIsJAO3F8D0IakGi1UrDay0Uf2GLFK85LJaNtk=')
+mytest = PyWolfTranslator(consumer_key, consumer_secret)
 result = mytest.evaluate_equation(eq, symbol, var)
 
 print(result)
