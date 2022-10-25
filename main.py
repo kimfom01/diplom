@@ -1,8 +1,24 @@
 from pythonwolframtranslator import PyWolfTranslator
 from auth import consumer_key, consumer_secret
 
+def test_runner(key, secret, eq, symb, var=None):
+    mytest = PyWolfTranslator(key, secret)
+
+    if var == None:
+        return mytest.evaluate_equation(eq, symb)
+    return mytest.evaluate_equation(eq, symb, var)
+
+
+eq = 'Sin[x + I y]'
+symbol = 'ComplexExpand'
+var = None
+
+result = test_runner(consumer_key, consumer_secret, eq, symbol, var)
+print(result)
+
 # eq = 'x^2 + 2 x + 1'
 # symbol = 'Factor'
+# var = None
 
 # eq = 'x^2 + 3 x - 4 == 0'
 # symbol = 'Roots'
@@ -20,15 +36,10 @@ from auth import consumer_key, consumer_secret
 # symbol = 'Integrate'
 # var = 'x'
 
-eq = 'y\'[x] + y[x] == x'
-symbol = 'DSolveValue'
-var = 'y[x], x'
+# eq = 'y\'[x] + y[x] == x'
+# symbol = 'DSolveValue'
+# var = 'y[x], x'
 
 # eq = 'Sin[x + I y]'
 # symbol = 'ComplexExpand'
-
-mytest = PyWolfTranslator(consumer_key, consumer_secret)
-result = mytest.evaluate_equation(eq, symbol, var)
-
-print(result)
-# print(mytest.__doc__)
+# var = None
