@@ -48,4 +48,6 @@ result2 = my_object.evaluate_equation(eq, symbol, var)
 
 Some of the supported symbols can be found [here](https://www.wolfram.com/language/fast-introduction-for-math-students/en/)
 
+[The document can be found here](https://docs.google.com/document/d/1U_7Qk7QTGbCNAzYMTHI8Gfd0FBSQ6o2Mmyp-psyEcQQ/edit?usp=sharing)
+
 ### Feel free to raise issues encountered with the project and I will address them as soon as possible
