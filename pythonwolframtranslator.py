@@ -80,13 +80,15 @@ class PyWolfTranslator:
 
         self.session.start()
         if not self.session.authorized():
-            raise ValueError('Not Authorized! Please verify your secure authentication key!')
+            raise ValueError(
+                'Not Authorized! Please verify your secure authentication key!')
         eq = f'{self._equation}'
         if self._var == None:
             sym_form = f'{self._symbol}[{eq}]'
         else:
             sym_form = f'{self._symbol}[{eq}, {self._var}]'
-        result = self.session.evaluate('ToString[TeXForm[{}]]'.format(self.session.evaluate(sym_form)))
+        result = self.session.evaluate(sym_form)
+        # result = self.session.evaluate('ToString[TeXForm[{}]]'.format(self.session.evaluate(sym_form)))
         self.__close_session()
         return result
 

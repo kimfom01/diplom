@@ -1,6 +1,7 @@
 from pythonwolframtranslator import PyWolfTranslator
 from auth import consumer_key, consumer_secret
 
+
 def test_runner(key, secret, eq, symb, var=None):
     mytest = PyWolfTranslator(key, secret)
 
@@ -9,9 +10,9 @@ def test_runner(key, secret, eq, symb, var=None):
     return mytest.evaluate_equation(eq, symb, var)
 
 
-eq = 'Sin[x + I y]'
-symbol = 'ComplexExpand'
-var = None
+eq = '{y\'[x] + y[x] == x, y[0] == 1}'
+symbol = 'NDSolveValue'
+var = 'y, {x, 0, 10}'
 
 result = test_runner(consumer_key, consumer_secret, eq, symbol, var)
 print(result)
