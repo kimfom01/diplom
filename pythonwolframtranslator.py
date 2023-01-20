@@ -3,7 +3,7 @@ from wolframclient.evaluation import SecuredAuthenticationKey, WolframCloudSessi
 
 class PyWolfTranslator:
     """
-    A class used to represent the translator object and calulate given expression
+    A class used to represent the translator object and calculate given expression
 
     ...
 
@@ -14,7 +14,7 @@ class PyWolfTranslator:
     symbol : str
         the symbol determining what will be evaluated
     var: str
-        represents the varibles to be evaluated (default is None)
+        represents the variables to be evaluated (default is None)
     sak: Any
         represents a Secured Authentication Key generated using the Wolfram Language function
     session: Any
@@ -25,19 +25,24 @@ class PyWolfTranslator:
     evaluate_equation():
         calculates the expression initialized in the constructor and returns a result in latex format
     """
+
     # TODO: add a method to convert the output to human readable form
     # Not all symbols can be evaluated
-    # TODO: compile a list of symbols that the class can evaluate and use it to raise an exception when the user calls a symbol that isn't supported
+    # TODO: compile a list of symbols that the class can evaluate and use it to raise an exception when the user calls
+    #  a symbol that isn't supported
 
     def __init__(self, consumer_key, consumer_secret):
         """
         Parameters
         ----------
         consumer_key : str
-            a public key generated from wolframcloud used to connect to the cloud api
+            a public key generated from wolfram cloud used to connect to the cloud api
         consumer_secret : str
-            a secret key generated from wolframcloud used to connect to the cloud api
+            a secret key generated from wolfram cloud used to connect to the cloud api
         """
+        self._var = None
+        self._symbol = None
+        self._equation = None
         self.sak = SecuredAuthenticationKey(consumer_key, consumer_secret)
         self.session = WolframCloudSession(credentials=self.sak)
 
@@ -66,7 +71,7 @@ class PyWolfTranslator:
         symbol : str
             the symbol determining what will be evaluated
         var: str
-            represents the varibles to be evaluated (default is None)
+            represents the variables to be evaluated (default is None)
 
         Returns
         -------
@@ -83,12 +88,11 @@ class PyWolfTranslator:
             raise ValueError(
                 'Not Authorized! Please verify your secure authentication key!')
         eq = f'{self._equation}'
-        if self._var == None:
+        if self._var is None:
             sym_form = f'{self._symbol}[{eq}]'
         else:
             sym_form = f'{self._symbol}[{eq}, {self._var}]'
         result = self.session.evaluate(sym_form)
-        # result = self.session.evaluate('ToString[TeXForm[{}]]'.format(self.session.evaluate(sym_form)))
         self.__close_session()
         return result
 

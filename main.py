@@ -2,19 +2,19 @@ from pythonwolframtranslator import PyWolfTranslator
 from auth import consumer_key, consumer_secret
 
 
-def test_runner(key, secret, eq, symb, var=None):
+def test_runner(key, secret, equation, symbol, variable=None):
     mytest = PyWolfTranslator(key, secret)
 
-    if var == None:
-        return mytest.evaluate_equation(eq, symb)
-    return mytest.evaluate_equation(eq, symb, var)
+    if variable is None:
+        return mytest.evaluate_equation(equation, symbol)
+    return mytest.evaluate_equation(equation, symbol, variable)
 
 
 eq = '{y\'[x] + y[x] == x, y[0] == 1}'
-symbol = 'NDSolveValue'
+sym = 'NDSolveValue'
 var = 'y, {x, 0, 10}'
 
-result = test_runner(consumer_key, consumer_secret, eq, symbol, var)
+result = test_runner(consumer_key, consumer_secret, eq, sym, var)
 print(result)
 
 # eq = 'x^2 + 2 x + 1'
