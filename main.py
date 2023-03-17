@@ -1,3 +1,4 @@
+import time
 from pythonwolframtranslator import PyWolfTranslator
 from auth import consumer_key, consumer_secret
 
@@ -14,8 +15,10 @@ eq = '{y\'[x] + y[x] == x, y[0] == 1}'
 sym = 'NDSolveValue'
 var = 'y, {x, 0, 10}'
 
+start = time.time()
 result = test_runner(consumer_key, consumer_secret, eq, sym, var)
 print(result)
+print(time.time() - start)
 
 # eq = 'x^2 + 2 x + 1'
 # symbol = 'Factor'
