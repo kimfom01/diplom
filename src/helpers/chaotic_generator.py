@@ -5,7 +5,7 @@ import numpy as np
 def calculate_eigen_values(lines):
     eigen_values = []
 
-    with open("data.csv") as file:
+    with open("../out/data.csv") as file:
         for _ in range(lines):
             line = file.readline()
             line_array = line.split(",")
@@ -19,7 +19,7 @@ def calculate_eigen_values(lines):
 
 
 def write_output(eigen_values):
-    with open("output.txt", "w") as output:
+    with open("../out/output.txt", "w") as output:
         for value in eigen_values:
             found = False
             for num in value:

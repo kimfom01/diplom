@@ -1,5 +1,5 @@
 import time
-from pythonwolframtranslator import PyWolfTranslator
+from core.pythonwolframtranslator import PyWolfTranslator
 from auth import consumer_key, consumer_secret
 
 

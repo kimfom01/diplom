@@ -12,7 +12,7 @@ def __get_random(lower, upper):
 
 
 def generate_data(lines):
-    with open("data.csv", "w") as output_file:
+    with open("../out/data.csv", "w") as output_file:
         writer = csv.writer(output_file)
         for i in range(lines):
             row = __get_random(-9, 9)
