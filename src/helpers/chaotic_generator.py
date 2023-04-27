@@ -1,11 +1,11 @@
-from generator import generate_data
+from generator import generate_data, csv_path
 import numpy as np
 
 
 def calculate_eigen_values(lines):
     eigen_values = []
 
-    with open("../out/data.csv") as file:
+    with open(csv_path) as file:
         for _ in range(lines):
             line = file.readline()
             line_array = line.split(",")

@@ -1,6 +1,8 @@
 import csv
 import random
 
+csv_path = "../out/data.csv"
+
 
 def __get_random(lower, upper):
     return [
@@ -12,7 +14,7 @@ def __get_random(lower, upper):
 
 
 def generate_data(lines):
-    with open("../out/data.csv", "w") as output_file:
+    with open(csv_path, "w") as output_file:
         writer = csv.writer(output_file)
         for i in range(lines):
             row = __get_random(-9, 9)
