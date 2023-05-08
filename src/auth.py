@@ -1,2 +1,2 @@
-consumer_key = 'CkD8JODcVcYDXXx/xU0IHzBBdrRZmaqvW6iRiedcrgk='
-consumer_secret = '8RaVLaIsJAO3F8D0IakGi1UrDay0Uf2GLFK85LJaNtk='
+consumer_key = 'flQYmN5erLnCunU3SZO6FE8yvY3uj7gyMpdDX2NM+bg='
+consumer_secret = 'nn4geIoetbHHyjWwhX7AFsYLtQkuGUIZx0yu9roB4lE='
