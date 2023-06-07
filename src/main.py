@@ -5,11 +5,11 @@ csv_path = "./out/matrices.csv"
 
 
 def solve_equation(key, secret, equation, symbol, variable=None):
-    mytest = PyWolfTranslator(key, secret)
+    myTestTranslator = PyWolfTranslator(key, secret)
 
     if variable is None:
-        return mytest.evaluate_equation(equation, symbol)
-    return mytest.evaluate_equation(equation, symbol, variable)
+        return myTestTranslator.evaluate_equation(equation, symbol)
+    return myTestTranslator.evaluate_equation(equation, symbol, variable)
 
 
 def calculate_eigen_values(lines):
@@ -22,22 +22,22 @@ def calculate_eigen_values(lines):
             line = file.readline()
             line = line.replace("\n", "")
             matrix = line.split(",")
-            eq = f'x\'[t] == -{matrix[0]} y[t] - {matrix[1]} x[t]^2, y\'[t] == {matrix[2]} x[t] - {matrix[3]} y[t]^3, x[0] == y[0] == 1'
+            eq = f'x\'[t] == {matrix[0]} x[t] + {matrix[1]} y[t], y\'[t] == {matrix[2]} x[t] + {matrix[3]} y[t], x[0] == y[0] == 1'
             eq = '{' + eq + '}'
             sym = 'NDSolveValue'
-            var = '{x, y}, {t, 0, 20}'
+            var = '{x, y}, {t, 20}'
             result.append(solve_equation(
                 consumer_key, consumer_secret, eq, sym, var))
     return result
 
 
-lines = 1000
+lines = 20
 
 values = calculate_eigen_values(lines)
 
 values = str(list(map(str, values)))
 
-with open("output.txt", "w") as final:
+with open("outputtttt.txt", "w") as final:
     final.writelines(values)
 
 
