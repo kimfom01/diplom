@@ -31,13 +31,13 @@ def calculate_eigen_values(lines):
     return result
 
 
-lines = 20
+lines = 1000
 
 values = calculate_eigen_values(lines)
 
-values = str(list(map(str, values)))
+values = map(str, values)
 
-with open("outputtttt.txt", "w") as final:
+with open("numerical_output.txt", "w") as final:
     final.writelines(values)
 
 
